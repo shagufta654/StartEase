@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>StartEase | Your Roadmap</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>✦</span> StartEase
+        </div>
+
+
+        <div class="nav-links">
+
+            <a
+                href="index.html"
+                data-i18n="navHome">
+                Home
+            </a>
+
+            <a
+                href="#funding"
+                data-i18n="navFunding">
+                Funding
+            </a>
+
+            <a
+                href="#connect"
+                data-i18n="navConnect">
+                Connect
+            </a>
+
+            <a
+                href="#"
+                onclick="event.preventDefault(); toggleAssistant(true);"
+                data-i18n="navAssistant">
+                AI Assistant
+            </a>
+
+            <a
+                href="index.html#features"
+                data-i18n="navFeatures">
+                Features
+            </a>
+
+        </div>
+
+
+        <select id="language-selector">
+
+            <option value="en">
+                English
+            </option>
+
+            <option value="hi">
+                हिंदी
+            </option>
+
+            <option value="mr">
+                मराठी
+            </option>
+
+        </select>
+
+
+        <div class="nav-actions">
+            <button class="auth-nav-btn" id="auth-action" onclick="logoutUser()">Log out</button>
+            <button
+                class="nav-btn"
+                onclick="window.location.href='index.html'">
+                <span data-i18n="navStartAgain">Start Again</span>
+            </button>
+        </div>
+
+    </nav>
+
+
+
+    <!-- MAIN -->
+
+    <main class="roadmap-page">
+
+
+        <!-- HEADER -->
+
+        <section class="roadmap-header">
+
+            <div>
+
+                <span
+                    class="roadmap-label"
+                    data-i18n="roadmapLabel">
+
+                    YOUR PERSONALIZED ROADMAP
+
+                </span>
+
+
+                <h1>
+
+                    <span data-i18n="roadmapTitle1">
+                        Let's get your startup
+                    </span>
+
+                    <span data-i18n="roadmapTitle2">
+                        ready.
+                    </span>
+
+                </h1>
+
+
+                <p id="startup-summary">
+                    Loading your startup details...
+                </p>
+
+            </div>
+
+
+            <div
+                class="personalized-badge"
+                data-i18n="personalizedBadge">
+
+                ✨ Personalized roadmap based on your startup
+
+            </div>
+
+
+
+            <div class="progress-card">
+
+                <div
+                    class="progress-number"
+                    id="progress-number">
+
+                    0%
+
+                </div>
+
+
+                <div>
+
+                    <strong data-i18n="progressTitle">
+                        Startup Progress
+                    </strong>
+
+                    <p data-i18n="progressText">
+                        Keep moving forward 🚀
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PROGRESS BAR -->
+
+        <section class="progress-bar-container">
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    id="progress-fill">
+                </div>
+
+            </div>
+
+
+            <div class="progress-info">
+
+                <span id="completed-count">
+                    0 of 5 completed
+                </span>
+
+                <span data-i18n="journey">
+                    Your journey
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ROADMAP -->
+
+        <section class="roadmap-section">
+
+            <div class="roadmap-title">
+
+                <div>
+
+                    <span data-i18n="nextSteps">
+                        YOUR NEXT STEPS
+                    </span>
+
+                    <h2 data-i18n="roadmapHeading">
+                        Startup Roadmap
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="filter-btn"
+                    onclick="resetProgress()"
+                    data-i18n="reset">
+
+                    Reset Progress
+
+                </button>
+
+            </div>
+
+
+            <div id="roadmap-container">
+
+                <!-- JavaScript will generate roadmap -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FUNDING & LOAN NAVIGATOR -->
+        <section class="funding-section" id="funding">
+
+            <div class="funding-heading">
+                <div>
+                    <span data-i18n="fundingLabel">FUND YOUR STARTUP</span>
+                    <h2 data-i18n="fundingTitle">Find a funding route that fits your stage.</h2>
+                    <p data-i18n="fundingText">Explore self-funding, loans and startup funding in one simple place. StartEase helps you understand the route before you apply.</p>
+                </div>
+                <div class="funding-stage-pill" id="funding-stage-pill">Your stage</div>
+            </div>
+
+            <div class="funding-grid">
+                <article class="funding-card featured">
+                    <div class="funding-icon">🌱</div>
+                    <div class="funding-tag" data-i18n="fundingTagStartup">STARTUP FUNDING</div>
+                    <h3 data-i18n="fundingStartupTitle">Startup India funding guide</h3>
+                    <p data-i18n="fundingStartupText">Explore funding routes, government schemes and investor-focused resources for startups.</p>
+                    <a class="funding-link" href="https://www.startupindia.gov.in/" target="_blank" rel="noopener" data-i18n="fundingLearn">Explore official resource →</a>
+                </article>
+
+                <article class="funding-card">
+                    <div class="funding-icon">🏦</div>
+                    <div class="funding-tag" data-i18n="fundingTagLoan">BUSINESS LOANS</div>
+                    <h3 data-i18n="fundingLoanTitle">Loans for micro businesses</h3>
+                    <p data-i18n="fundingLoanText">PMMY supports eligible micro enterprises through lending institutions, with categories based on loan size.</p>
+                    <a class="funding-link" href="https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy" target="_blank" rel="noopener" data-i18n="fundingLearn">Check official details →</a>
+                </article>
+
+                <article class="funding-card">
+                    <div class="funding-icon">🧭</div>
+                    <div class="funding-tag" data-i18n="fundingTagPortal">FIND A ROUTE</div>
+                    <h3 data-i18n="fundingPortalTitle">JanSamarth</h3>
+                    <p data-i18n="fundingPortalText">A government portal that brings multiple credit-linked schemes into one place so applicants can explore relevant options.</p>
+                    <a class="funding-link" href="https://www.jansamarth.in/home" target="_blank" rel="noopener" data-i18n="fundingLearn">Open official portal →</a>
+                </article>
+
+                <article class="funding-card">
+                    <div class="funding-icon">🚀</div>
+                    <div class="funding-tag" data-i18n="fundingTagSeed">SEED FUND</div>
+                    <h3 data-i18n="fundingSeedTitle">Startup India Seed Fund</h3>
+                    <p data-i18n="fundingSeedText">SISFS supports eligible early-stage startups for proof of concept, prototypes, product trials and market entry. The 2026 startup application window closed on 31 May 2026; check the official portal for current status and future windows.</p>
+                    <a class="funding-link" href="https://seedfund.startupindia.gov.in/faq" target="_blank" rel="noopener" data-i18n="fundingLearn">Check official status →</a>
+                </article>
+            </div>
+
+            <div class="funding-prep">
+                <div class="funding-prep-copy">
+                    <span data-i18n="fundingPrepLabel">BEFORE YOU APPLY</span>
+                    <h3 data-i18n="fundingPrepTitle">Get your basics ready first.</h3>
+                </div>
+                <div class="funding-checks">
+                    <span>✓ <span data-i18n="fundingCheck1">Clear business idea</span></span>
+                    <span>✓ <span data-i18n="fundingCheck2">Use-of-funds plan</span></span>
+                    <span>✓ <span data-i18n="fundingCheck3">Basic cost estimates</span></span>
+                    <span>✓ <span data-i18n="fundingCheck4">Relevant business documents</span></span>
+                </div>
+            </div>
+
+            <p class="funding-note" data-i18n="fundingNote">StartEase provides guidance and official resources. Eligibility, approval, interest rates and terms are decided by the relevant scheme or lender.</p>
+        </section>
+
+
+        <!-- STARTEASE CONNECT -->
+        <section class="connect-section" id="connect">
+
+            <div class="connect-heading">
+                <div>
+                    <span data-i18n="connectLabel">STARTEASE CONNECT</span>
+                    <h2 data-i18n="connectTitle">Know what help you need. Know what to ask for.</h2>
+                    <p data-i18n="connectText">Choose the kind of help your startup needs and build a simple brief you can take to a professional or service platform.</p>
+                </div>
+                <div class="connect-badge">✦ <span data-i18n="connectBadge">Build with confidence</span></div>
+            </div>
+
+            <div class="connect-grid">
+                <button class="connect-card active" data-connect-type="developer" onclick="selectConnectType('developer')">
+                    <span class="connect-card-icon">💻</span>
+                    <span class="connect-card-tag" data-i18n="connectDeveloperTag">BUILD</span>
+                    <strong data-i18n="connectDeveloperTitle">Developer</strong>
+                    <small data-i18n="connectDeveloperText">Website, mobile app or both.</small>
+                </button>
+
+                <button class="connect-card" data-connect-type="designer" onclick="selectConnectType('designer')">
+                    <span class="connect-card-icon">🎨</span>
+                    <span class="connect-card-tag" data-i18n="connectDesignerTag">BRAND</span>
+                    <strong data-i18n="connectDesignerTitle">Designer</strong>
+                    <small data-i18n="connectDesignerText">Logo, identity and visual design.</small>
+                </button>
+
+                <button class="connect-card" data-connect-type="finance" onclick="selectConnectType('finance')">
+                    <span class="connect-card-icon">📊</span>
+                    <span class="connect-card-tag" data-i18n="connectFinanceTag">MONEY</span>
+                    <strong data-i18n="connectFinanceTitle">Finance help</strong>
+                    <small data-i18n="connectFinanceText">Bookkeeping, accounts and financial setup.</small>
+                </button>
+
+                <button class="connect-card" data-connect-type="legal" onclick="selectConnectType('legal')">
+                    <span class="connect-card-icon">⚖️</span>
+                    <span class="connect-card-tag" data-i18n="connectLegalTag">LEGAL</span>
+                    <strong data-i18n="connectLegalTitle">Legal help</strong>
+                    <small data-i18n="connectLegalText">Registrations, agreements and legal guidance.</small>
+                </button>
+            </div>
+
+            <div class="connect-workspace">
+                <div class="connect-workspace-copy">
+                    <span class="connect-mini-label" data-i18n="connectStepLabel">STEP 1 · TELL US WHAT YOU NEED</span>
+                    <h3 id="connect-panel-title">Build a website or app</h3>
+                    <p id="connect-panel-text">Answer two quick questions and StartEase will prepare a starter brief you can share with a developer.</p>
+                </div>
+
+                <div class="connect-options" id="connect-options"></div>
+
+                <div class="connect-result" id="connect-result">
+                    <div>
+                        <span class="connect-mini-label" data-i18n="connectBriefLabel">YOUR STARTER BRIEF</span>
+                        <h4 id="connect-result-title">Website project</h4>
+                        <p id="connect-result-text">Business information, pages, contact details, mobile-friendly design, domain and hosting.</p>
+                    </div>
+                    <button class="connect-copy-btn" onclick="copyConnectBrief()" data-i18n="connectCopy">Copy brief</button>
+                </div>
+
+                <p class="connect-note" data-i18n="connectNote">StartEase does not assign or verify service providers. It helps you understand the help you need and prepare a clear brief before you contact one.</p>
+            </div>
+
+        </section>
+
+
+        <!-- AI ASSISTANT -->
+        <button class="assistant-fab" id="assistant-fab" onclick="toggleAssistant(true)" aria-label="Open AI Assistant">
+            <span class="assistant-fab-spark">✦</span>
+            <span data-i18n="assistantFab">Ask StartEase</span>
+        </button>
+
+        <section class="assistant-panel" id="assistant-panel" aria-hidden="true">
+            <div class="assistant-panel-head">
+                <div>
+                    <span class="assistant-kicker" data-i18n="assistantKicker">STARTEASE AI ASSISTANT</span>
+                    <h2 data-i18n="assistantTitle">Your startup co-pilot.</h2>
+                    <p data-i18n="assistantSubtitle">Ask about your next step, funding, setup or building your product.</p>
+                </div>
+                <button class="assistant-close" onclick="toggleAssistant(false)" aria-label="Close assistant">×</button>
+            </div>
+
+            <div class="assistant-context" id="assistant-context"></div>
+
+            <div class="assistant-messages" id="assistant-messages" aria-live="polite"></div>
+
+            <div class="assistant-suggestions" id="assistant-suggestions"></div>
+
+            <form class="assistant-input-row" id="assistant-form">
+                <input id="assistant-input" autocomplete="off" data-i18n-placeholder="assistantPlaceholder" placeholder="Ask me something about your startup...">
+                <button type="submit" data-i18n="assistantSend">Send</button>
+            </form>
+
+            <div class="assistant-footnote" data-i18n="assistantFootnote">StartEase uses your roadmap context to give guidance. Verify official requirements before applying.</div>
+        </section>
+
+
+        <!-- DETAILS MODAL -->
+
+        <div
+            class="details-overlay"
+            id="details-modal">
+
+            <div class="details-modal">
+
+
+                <button
+                    class="details-close"
+                    onclick="closeDetails()">
+
+                    ×
+
+                </button>
+
+
+                <div
+                    class="modal-icon"
+                    id="modal-icon">
+
+                    📋
+
+                </div>
+
+
+                <span
+                    class="modal-step"
+                    id="modal-step">
+
+                    STEP 1
+
+                </span>
+
+
+                <h2 id="modal-title">
+                    Business Registration
+                </h2>
+
+
+                <p id="modal-description">
+                    Details about this step.
+                </p>
+
+
+                <div class="modal-requirements">
+
+                    <h4 data-i18n="modalRequired">
+                        Usually required
+                    </h4>
+
+                    <div
+                        id="modal-requirement-list">
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="modal-resources"
+                    id="modal-resources">
+                </div>
+
+
+                <div
+                    class="modal-note"
+                    data-i18n="modalNote">
+
+                    💡 Requirements can vary depending on
+                    your business and location.
+
+                </div>
+
+
+                <button
+                    class="modal-action"
+                    onclick="closeDetails()"
+                    data-i18n="gotIt">
+
+                    Got it
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUICK HELP -->
+
+        <section class="help-card">
+
+            <div class="help-icon">
+                💡
+            </div>
+
+
+            <div>
+
+                <h3 data-i18n="helpTitle">
+                    Not sure where to start?
+                </h3>
+
+                <p data-i18n="helpText">
+                    Start with the highlighted step.
+                    We've arranged your roadmap in a simple order.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- CELEBRATION POPUP -->
+
+    <div
+        class="celebration-overlay"
+        id="celebration-overlay">
+
+        <div
+            class="celebration-confetti"
+            id="celebration-confetti">
+        </div>
+
+
+        <div class="celebration-card">
+
+            <div class="celebration-icon">
+                🎉
+            </div>
+
+
+            <span
+                class="celebration-small"
+                data-i18n="completeTitle">
+
+                ROADMAP COMPLETE
+
+            </span>
+
+
+            <h2 data-i18n="completeHeading">
+                You did it! 🚀
+            </h2>
+
+
+            <p data-i18n="completeText">
+
+                Your startup roadmap is complete.
+                You've taken all the major steps —
+                now it's time to build!
+
+            </p>
+
+
+            <button
+                class="celebration-btn"
+                onclick="closeCelebration()"
+                data-i18n="letsGo">
+
+                Let's Go! ✨
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="auth.js"></script>
+    <script src="roadmap.js"></script>
+
+</body>
+</html>
