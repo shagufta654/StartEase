@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StartEase | Startup Journey Simplified</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <span>✦</span> StartEase
+        </div>
+
+        <div class="nav-links">
+            <a href="#home" data-i18n="navHome">Home</a>
+            <a href="#how-it-works" data-i18n="navHow">How It Works</a>
+            <a href="#features" data-i18n="navFeatures">Features</a>
+        </div>
+
+        <select id="language-selector">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="mr">मराठी</option>
+        </select>
+
+        <div class="nav-actions">
+            <button class="auth-nav-btn" id="auth-action" onclick="openAuthModal()">Log in</button>
+            <button class="nav-btn" onclick="startJourney()" data-i18n="navStart">
+                Start Journey
+            </button>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge" data-i18n="heroBadge">
+                🚀 Built for first-time founders
+            </div>
+
+            <h1 id="hero-title">
+                <span data-i18n="heroTitle1">Your startup journey,</span>
+                <span data-i18n="heroTitle2">simplified.</span>
+            </h1>
+
+            <p id="hero-text" data-i18n="heroText">
+                StartEase helps new entrepreneurs understand the registrations,
+                documents and steps they need to start their business — all in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="nav-btn"
+                    id="start-journey-btn"
+                    onclick="startJourney()"
+                    data-i18n="startJourney">
+                    Start My Journey
+                </button>
+
+                <button
+                    class="nav-btn"
+                    id="see-how-btn"
+                    data-i18n="seeHow">
+                    See How It Works
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO CARD -->
+        <div class="hero-card">
+
+            <div class="card-top">
+
+                <div>
+
+                    <small data-i18n="previewLabel">
+                        Your Startup Roadmap
+                    </small>
+
+                    <h3 id="preview-business">
+                        Food Business
+                    </h3>
+
+                </div>
+
+                <div class="progress-circle" id="preview-progress">
+                    0%
+                </div>
+
+            </div>
+
+
+            <div class="roadmap">
+
+                <div class="roadmap-item completed">
+
+                    <div class="step-icon">✓</div>
+
+                    <div>
+                        <strong data-i18n="previewPlanning">
+                            Business Planning
+                        </strong>
+
+                        <p data-i18n="previewCompleted">
+                            Completed
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="roadmap-item active">
+
+                    <div class="step-icon">2</div>
+
+                    <div>
+                        <strong data-i18n="previewRegistration">
+                            Business Registration
+                        </strong>
+
+                        <p data-i18n="previewNext">
+                            Next step
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="step-icon">3</div>
+
+                    <div>
+                        <strong data-i18n="previewTax">
+                            Tax Registration
+                        </strong>
+
+                        <p data-i18n="previewPending">
+                            Pending
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="step-icon">4</div>
+
+                    <div>
+                        <strong data-i18n="previewLicences">
+                            Required Licences
+                        </strong>
+
+                        <p data-i18n="previewPending">
+                            Pending
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- START EASE JOURNEY -->
+    <section class="journey-strip" aria-label="StartEase journey">
+        <div class="journey-copy">
+            <span data-i18n="journeyLabel">THE STARTEASE JOURNEY</span>
+            <strong data-i18n="journeyTitle">Plan it. Fund it. Build it. Launch it.</strong>
+        </div>
+        <div class="journey-steps">
+            <div class="journey-step"><b>01</b><span data-i18n="journeyPlan">Plan</span></div>
+            <i>→</i>
+            <div class="journey-step"><b>02</b><span data-i18n="journeyFund">Fund</span></div>
+            <i>→</i>
+            <div class="journey-step"><b>03</b><span data-i18n="journeyBuild">Build</span></div>
+            <i>→</i>
+            <div class="journey-step"><b>04</b><span data-i18n="journeyLaunch">Launch</span></div>
+        </div>
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how-it-works">
+
+        <div class="section-heading">
+
+            <span data-i18n="howLabel">
+                HOW IT WORKS
+            </span>
+
+            <h2 id="how-title">
+                <span data-i18n="howTitle1">From idea to startup,</span>
+                <br>
+                <span data-i18n="howTitle2">one step at a time.</span>
+            </h2>
+
+            <p id="how-subtitle" data-i18n="howSubtitle">
+                No complicated paperwork hunting.
+                Just answer a few questions and we'll guide you.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="info-card">
+
+                <div class="number">01</div>
+
+                <h3 data-i18n="howStep1Title">
+                    Tell us about your startup
+                </h3>
+
+                <p data-i18n="howStep1Text">
+                    Answer a few simple questions about your
+                    business and location.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="number">02</div>
+
+                <h3 data-i18n="howStep2Title">
+                    Get your roadmap
+                </h3>
+
+                <p data-i18n="howStep2Text">
+                    Receive a personalized list of registrations,
+                    documents and steps.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="number">03</div>
+
+                <h3 data-i18n="howStep3Title">
+                    Track your progress
+                </h3>
+
+                <p data-i18n="howStep3Text">
+                    Mark tasks as completed and keep your
+                    startup journey organized.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features-section" id="features">
+
+        <div class="section-heading">
+
+            <span data-i18n="whyLabel">
+                WHY STARTEASE
+            </span>
+
+            <h2>
+                <span data-i18n="whyTitle1">Less confusion.</span>
+                <br>
+                <span data-i18n="whyTitle2">More progress.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card feature-card-main">
+                <div class="feature-icon">🧭</div>
+                <h3 data-i18n="feature1Title">Smart Startup Wizard</h3>
+                <p data-i18n="feature1Text">Answer simple questions and get a personalized startup roadmap.</p>
+                <label data-i18n="innovation">OUR INNOVATION</label>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3 data-i18n="feature2Title">Funding &amp; Loan Guidance</h3>
+                <p data-i18n="feature2Text">Explore funding routes and understand what to prepare before applying.</p>
+                <label data-i18n="comingSoon">COMING NEXT</label>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💻</div>
+                <h3 data-i18n="feature3Title">Developer Connect</h3>
+                <p data-i18n="feature3Text">Find the right kind of technical help when your idea needs a website or app.</p>
+                <label data-i18n="comingSoon">COMING NEXT</label>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">✦</div>
+                <h3 data-i18n="feature4Title">AI Startup Assistant</h3>
+                <p data-i18n="feature4Text">Get quick explanations and guidance while you move through your journey.</p>
+                <label data-i18n="innovation">OUR INNOVATION</label>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>
+            <span data-i18n="ctaTitle1">Ready to turn your idea</span>
+            <br>
+            <span data-i18n="ctaTitle2">into a startup?</span>
+        </h2>
+
+        <p data-i18n="ctaText">
+            Let's figure out your first steps.
+        </p>
+
+        <button
+            class="primary-btn"
+            onclick="startJourney()"
+            data-i18n="ctaButton">
+            Start My Journey →
+        </button>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="logo">
+            <span>✦</span> StartEase
+        </div>
+
+        <p data-i18n="footerText">
+            Simplifying the startup journey for first-time founders.
+        </p>
+
+        <small data-i18n="footerPrototype">
+            Prototype • Student Innovation
+        </small>
+
+    </footer>
+
+
+    <!-- STARTUP WIZARD -->
+    <div class="wizard-overlay" id="wizard">
+
+        <div class="wizard-box">
+
+            <button
+                class="close-wizard"
+                onclick="closeWizard()">
+                ×
+            </button>
+
+            <div class="wizard-header">
+
+                <span data-i18n="wizardLabel">
+                    STARTUP WIZARD
+                </span>
+
+                <h2 data-i18n="wizardTitle">
+                    Let's understand your startup.
+                </h2>
+
+                <p data-i18n="wizardText">
+                    Answer a few simple questions and get a roadmap that fits where you are right now.
+                </p>
+
+            </div>
+
+
+            <!-- BUSINESS TYPE -->
+            <div class="wizard-step">
+
+                <h3 data-i18n="businessQuestion">
+                    1. What type of business are you starting?
+                </h3>
+
+                <div class="wizard-options">
+
+                    <div
+                        class="wizard-option"
+                        onclick="selectOption(this, 'business', 'Retail')">
+
+                        🛍️
+
+                        <strong data-i18n="retail">
+                            Retail
+                        </strong>
+
+                        <small data-i18n="retailText">
+                            Products & stores
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="wizard-option"
+                        onclick="selectOption(this, 'business', 'Food')">
+
+                        🍴
+
+                        <strong data-i18n="food">
+                            Food
+                        </strong>
+
+                        <small data-i18n="foodText">
+                            Food & beverages
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="wizard-option"
+                        onclick="selectOption(this, 'business', 'Technology')">
+
+                        💻
+
+                        <strong data-i18n="technology">
+                            Technology
+                        </strong>
+
+                        <small data-i18n="technologyText">
+                            Tech & software
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="wizard-option"
+                        onclick="selectOption(this, 'business', 'Services')">
+
+                        💼
+
+                        <strong data-i18n="services">
+                            Services
+                        </strong>
+
+                        <small data-i18n="servicesText">
+                            Professional services
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOCATION -->
+            <div class="wizard-step">
+
+                <h3 data-i18n="locationQuestion">
+                    2. Where will your business operate?
+                </h3>
+
+                <select
+                    id="location"
+                    onchange="startupData.location = this.value">
+
+                    <option value="" data-i18n="selectState">
+                        Select your state
+                    </option>
+
+                    <option value="Maharashtra">
+                        Maharashtra
+                    </option>
+
+                    <option value="Gujarat">
+                        Gujarat
+                    </option>
+
+                    <option value="Karnataka">
+                        Karnataka
+                    </option>
+
+                    <option value="Delhi">
+                        Delhi
+                    </option>
+
+                    <option value="Tamil Nadu">
+                        Tamil Nadu
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- STAGE -->
+            <div class="wizard-step">
+
+                <h3 data-i18n="stageQuestion">
+                    3. Where are you in your journey?
+                </h3>
+
+                <div class="wizard-options">
+
+                    <div
+                        class="wizard-option"
+                        onclick="selectOption(this, 'stage', 'Idea')">
+
+                        💡
+
+                        <strong data-i18n="idea">
+                            Just an idea
+                        </strong>
+
+                        <small data-i18n="ideaText">
+                            Planning my business
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="wizard-option"
+                        onclick="selectOption(this, 'stage', 'Planning')">
+
+                        🚀
+
+                        <strong data-i18n="planningLaunch">
+                            Planning to launch
+                        </strong>
+
+                        <small data-i18n="planningText">
+                            Getting everything ready
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="wizard-option"
+                        onclick="selectOption(this, 'stage', 'Operating')">
+
+                        🏢
+
+                        <strong data-i18n="operating">
+                            Already operating
+                        </strong>
+
+                        <small data-i18n="operatingText">
+                            My business has started
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <!-- READINESS CHECK -->
+            <div class="wizard-step readiness-step">
+
+                <div class="readiness-heading">
+                    <div>
+                        <h3 data-i18n="readinessQuestion">4. How ready is your startup today?</h3>
+                        <p data-i18n="readinessText">Select what you already have. There are no wrong answers — this helps us understand your starting point.</p>
+                    </div>
+                    <span class="readiness-count" id="readiness-count">0/5</span>
+                </div>
+
+                <div class="readiness-grid">
+                    <label class="readiness-option" onclick="toggleReadiness(this, 'name')">
+                        <input type="checkbox" aria-label="Business name">
+                        <span class="readiness-check">✓</span>
+                        <span><strong data-i18n="readinessName">Business name</strong><small data-i18n="readinessNameText">I have a name in mind</small></span>
+                    </label>
+
+                    <label class="readiness-option" onclick="toggleReadiness(this, 'budget')">
+                        <input type="checkbox" aria-label="Basic budget">
+                        <span class="readiness-check">✓</span>
+                        <span><strong data-i18n="readinessBudget">Basic budget</strong><small data-i18n="readinessBudgetText">I know my starting budget</small></span>
+                    </label>
+
+                    <label class="readiness-option" onclick="toggleReadiness(this, 'customer')">
+                        <input type="checkbox" aria-label="Target customer">
+                        <span class="readiness-check">✓</span>
+                        <span><strong data-i18n="readinessCustomer">Target customer</strong><small data-i18n="readinessCustomerText">I know who I want to serve</small></span>
+                    </label>
+
+                    <label class="readiness-option" onclick="toggleReadiness(this, 'product')">
+                        <input type="checkbox" aria-label="Product or service">
+                        <span class="readiness-check">✓</span>
+                        <span><strong data-i18n="readinessProduct">Product or service</strong><small data-i18n="readinessProductText">I know what I will offer</small></span>
+                    </label>
+
+                    <label class="readiness-option" onclick="toggleReadiness(this, 'online')">
+                        <input type="checkbox" aria-label="Online presence">
+                        <span class="readiness-check">✓</span>
+                        <span><strong data-i18n="readinessOnline">Online presence</strong><small data-i18n="readinessOnlineText">I have a website, page or online profile</small></span>
+                    </label>
+                </div>
+
+                <div class="readiness-note">✦ <span data-i18n="readinessCountLabel">Ready items</span>: <strong id="readiness-count-inline">0</strong>/5</div>
+            </div>
+
+
+            <button
+                class="generate-btn"
+                onclick="generateRoadmap()"
+                data-i18n="generate">
+                Generate My Roadmap →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- AUTH MODAL -->
+    <div class="auth-overlay" id="auth-modal" aria-hidden="true">
+        <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+            <button class="auth-close" onclick="closeAuthModal()" aria-label="Close">×</button>
+            <div class="auth-brand">✦ StartEase</div>
+            <div class="auth-kicker">YOUR STARTUP JOURNEY</div>
+            <h2 id="auth-title">Welcome back.</h2>
+            <p class="auth-subtitle" id="auth-subtitle">Log in to continue your startup journey.</p>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="login-tab" onclick="showAuthMode('login')">Log in</button>
+                <button class="auth-tab" id="signup-tab" onclick="showAuthMode('signup')">Create account</button>
+            </div>
+
+            <form id="login-form" class="auth-form" onsubmit="handleLogin(event)">
+                <label>Email address</label>
+                <input id="login-email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                <label>Password</label>
+                <input id="login-password" type="password" autocomplete="current-password" placeholder="Enter your password" required minlength="4">
+                <p class="auth-error" id="login-error"></p>
+                <button class="auth-submit" type="submit">Log in to StartEase →</button>
+                <p class="auth-switch">New here? <button type="button" onclick="showAuthMode('signup')">Create an account</button></p>
+            </form>
+
+            <form id="signup-form" class="auth-form hidden" onsubmit="handleSignup(event)">
+                <label>Your name</label>
+                <input id="signup-name" type="text" autocomplete="name" placeholder="Your name" required maxlength="40">
+                <label>Email address</label>
+                <input id="signup-email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                <label>Create password</label>
+                <input id="signup-password" type="password" autocomplete="new-password" placeholder="At least 4 characters" required minlength="4">
+                <p class="auth-error" id="signup-error"></p>
+                <button class="auth-submit" type="submit">Create my account →</button>
+                <p class="auth-switch">Already have an account? <button type="button" onclick="showAuthMode('login')">Log in</button></p>
+            </form>
+
+            <p class="auth-note">Prototype authentication: your account stays in this browser using local storage.</p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
